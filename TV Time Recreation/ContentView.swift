@@ -6,16 +6,36 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+    
+    enum ViewSelection: String, CaseIterable {
+            case first = "First"
+            case second = "Second"
         }
-        .padding()
+
+    @State private var selection: ViewSelection = .first
+    
+    let segments = ["First", "Second"]
+    
+    var body: some View {
+        
+        Picker("Select a view", selection: $selection) {
+                        ForEach(ViewSelection.allCases, id: \.self) { option in
+                            Text(option.rawValue).tag(option)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                    .padding()
+       
+        switch selection {
+        case .first:
+            GridView()
+        case .second:
+            Color(.blue)
+        }
+        
     }
 }
 
