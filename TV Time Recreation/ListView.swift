@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListView: View {
     
-    var seriesList: SeriesList = SeriesList()
+    var seriesList: SeriesList = sharedData
     
     let calendar = Calendar.current
     let today = Date()
@@ -28,15 +28,15 @@ struct ListView: View {
                     
                     ForEach(seriesList.series) { show in
                         
-                        if(show.dayOfRelease == i) {
+                        if(show.dayOfRelease - 1 == i) {
                             HStack {
                                 Image(show.name).resizable().scaledToFit().frame(height: 100)
                                 let textName: String = show.name.replacingOccurrences(of: "-", with: " ")
                                 
-                                VStack {
+                                VStack(alignment: .leading) {
                                     Text(textName)
                                     Spacer()
-                                    Text("S01 | E01")
+                                    Text("S01 | \(show.watchedEpisodes + 1)")
                                 }
                                 
                                 Spacer()
@@ -44,8 +44,9 @@ struct ListView: View {
                                 Button {
                                     
                                 } label: {
-                                    Image(systemName: "checkmark.circle").font(.system(size: 50)).foregroundStyle(.black)
+                                    Image(systemName: "checkmark.circle").font(.system(size: 40)).foregroundStyle(.black)
                                 }
+                                .buttonStyle(.plain)
                                 
                             }
                         }

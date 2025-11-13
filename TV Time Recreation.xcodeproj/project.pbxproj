@@ -6,19 +6,89 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BE5194B02EC37DC000A57C66 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5194AF2EC37DC000A57C66 /* WidgetKit.framework */; };
+		BE5194B22EC37DC000A57C66 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5194B12EC37DC000A57C66 /* SwiftUI.framework */; };
+		BE5194BD2EC37DC100A57C66 /* ListWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BE5194AD2EC37DC000A57C66 /* ListWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BE5194BB2EC37DC100A57C66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE8131A22EBE4D6E0005B3A7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE5194AC2EC37DC000A57C66;
+			remoteInfo = ListWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BE5194BE2EC37DC100A57C66 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BE5194BD2EC37DC100A57C66 /* ListWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		BE5194AD2EC37DC000A57C66 /* ListWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ListWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE5194AF2EC37DC000A57C66 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		BE5194B12EC37DC000A57C66 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		BE8131AA2EBE4D6E0005B3A7 /* TV Time Recreation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TV Time Recreation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		BE5194C12EC37DC100A57C66 /* Exceptions for "ListWidget" folder in "ListWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = BE5194AC2EC37DC000A57C66 /* ListWidgetExtension */;
+		};
+		BE5194C42EC37F2700A57C66 /* Exceptions for "TV Time Recreation" folder in "ListWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Series.swift,
+			);
+			target = BE5194AC2EC37DC000A57C66 /* ListWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		BE5194B32EC37DC000A57C66 /* ListWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				BE5194C12EC37DC100A57C66 /* Exceptions for "ListWidget" folder in "ListWidgetExtension" target */,
+			);
+			path = ListWidget;
+			sourceTree = "<group>";
+		};
 		BE8131AC2EBE4D6E0005B3A7 /* TV Time Recreation */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				BE5194C42EC37F2700A57C66 /* Exceptions for "TV Time Recreation" folder in "ListWidgetExtension" target */,
+			);
 			path = "TV Time Recreation";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BE5194AA2EC37DC000A57C66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE5194B22EC37DC000A57C66 /* SwiftUI.framework in Frameworks */,
+				BE5194B02EC37DC000A57C66 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BE8131A72EBE4D6E0005B3A7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -29,10 +99,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE5194AE2EC37DC000A57C66 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE5194AF2EC37DC000A57C66 /* WidgetKit.framework */,
+				BE5194B12EC37DC000A57C66 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BE8131A12EBE4D6E0005B3A7 = {
 			isa = PBXGroup;
 			children = (
 				BE8131AC2EBE4D6E0005B3A7 /* TV Time Recreation */,
+				BE5194B32EC37DC000A57C66 /* ListWidget */,
+				BE5194AE2EC37DC000A57C66 /* Frameworks */,
 				BE8131AB2EBE4D6E0005B3A7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				BE8131AA2EBE4D6E0005B3A7 /* TV Time Recreation.app */,
+				BE5194AD2EC37DC000A57C66 /* ListWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,6 +130,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BE5194AC2EC37DC000A57C66 /* ListWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE5194C22EC37DC100A57C66 /* Build configuration list for PBXNativeTarget "ListWidgetExtension" */;
+			buildPhases = (
+				BE5194A92EC37DC000A57C66 /* Sources */,
+				BE5194AA2EC37DC000A57C66 /* Frameworks */,
+				BE5194AB2EC37DC000A57C66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				BE5194B32EC37DC000A57C66 /* ListWidget */,
+			);
+			name = ListWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = ListWidgetExtension;
+			productReference = BE5194AD2EC37DC000A57C66 /* ListWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		BE8131A92EBE4D6E0005B3A7 /* TV Time Recreation */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE8131B52EBE4D6F0005B3A7 /* Build configuration list for PBXNativeTarget "TV Time Recreation" */;
@@ -55,10 +159,12 @@
 				BE8131A62EBE4D6E0005B3A7 /* Sources */,
 				BE8131A72EBE4D6E0005B3A7 /* Frameworks */,
 				BE8131A82EBE4D6E0005B3A7 /* Resources */,
+				BE5194BE2EC37DC100A57C66 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BE5194BC2EC37DC100A57C66 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				BE8131AC2EBE4D6E0005B3A7 /* TV Time Recreation */,
@@ -80,6 +186,9 @@
 				LastSwiftUpdateCheck = 2600;
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
+					BE5194AC2EC37DC000A57C66 = {
+						CreatedOnToolsVersion = 26.0.1;
+					};
 					BE8131A92EBE4D6E0005B3A7 = {
 						CreatedOnToolsVersion = 26.0.1;
 					};
@@ -100,11 +209,19 @@
 			projectRoot = "";
 			targets = (
 				BE8131A92EBE4D6E0005B3A7 /* TV Time Recreation */,
+				BE5194AC2EC37DC000A57C66 /* ListWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BE5194AB2EC37DC000A57C66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BE8131A82EBE4D6E0005B3A7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,6 +232,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BE5194A92EC37DC000A57C66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BE8131A62EBE4D6E0005B3A7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,7 +248,75 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		BE5194BC2EC37DC100A57C66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE5194AC2EC37DC000A57C66 /* ListWidgetExtension */;
+			targetProxy = BE5194BB2EC37DC100A57C66 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		BE5194BF2EC37DC100A57C66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WF63BG36UH;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ListWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ListWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rosariodantonio.TV-Time-Recreation.ListWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BE5194C02EC37DC100A57C66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WF63BG36UH;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ListWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ListWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rosariodantonio.TV-Time-Recreation.ListWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		BE8131B32EBE4D6F0005B3A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -256,11 +448,12 @@
 				DEVELOPMENT_TEAM = WF63BG36UH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TV-Time-Recreation-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -288,11 +481,12 @@
 				DEVELOPMENT_TEAM = WF63BG36UH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TV-Time-Recreation-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -313,6 +507,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BE5194C22EC37DC100A57C66 /* Build configuration list for PBXNativeTarget "ListWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE5194BF2EC37DC100A57C66 /* Debug */,
+				BE5194C02EC37DC100A57C66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BE8131A52EBE4D6E0005B3A7 /* Build configuration list for PBXProject "TV Time Recreation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -11,31 +11,31 @@ import UIKit
 struct ContentView: View {
     
     enum ViewSelection: String, CaseIterable {
-            case first = "First"
-            case second = "Second"
-        }
+            case first = "Watch List"
+            case second = "Upcoming"
+    }
 
     @State private var selection: ViewSelection = .first
-    
-    let segments = ["First", "Second"]
+
     
     var body: some View {
         
-        Picker("Select a view", selection: $selection) {
-                        ForEach(ViewSelection.allCases, id: \.self) { option in
-                            Text(option.rawValue).tag(option)
-                        }
-                    }
-                    .pickerStyle(.segmented)
-                    .padding()
-       
-        switch selection {
-        case .first:
-            GridView()
-        case .second:
-            Color(.blue)
+        NavigationStack{
+            Picker("Select a view", selection: $selection) {
+                ForEach(ViewSelection.allCases, id: \.self) { option in
+                    Text(option.rawValue).tag(option)
+                }
+            }
+            .pickerStyle(.segmented)
+            .padding(5)
+            
+            switch selection {
+            case .first:
+                GridView()
+            case .second:
+                ListView()
+            }
         }
-        
     }
 }
 

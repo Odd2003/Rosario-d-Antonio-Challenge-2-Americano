@@ -9,21 +9,35 @@ import SwiftUI
 
 struct GridView: View {
     
-    var seriesList: SeriesList = SeriesList()
+    var seriesList: SeriesList = sharedData
+    @State var selectedShow: Series? = nil
     
     var columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
-        LazyVGrid(columns: columns) {
-            
-            ForEach(seriesList.series) { show in
-                
-                Card(name: show.name)
-                
+        NavigationStack {
+            ScrollView {
+                LazyVGrid(columns: columns) {
+                    
+                    ForEach(seriesList.series) { show in
+                        
+                        NavigationLink {
+                            ShowDetailView(show: show)
+                        } label: {
+                            
+                            Card(name: show.name)
+                        }
+                        
+                        
+                    }
+                }
+                .padding(.horizontal, 10)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             }
-            
-        }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        }
     }
+    
+    
 }
 
 struct Card: View {
@@ -36,12 +50,13 @@ struct Card: View {
             
             let textName: String = name.replacingOccurrences(of: "-", with: " ")
             
-            Text(textName)
+            
+            Text(textName).foregroundStyle(.black).lineLimit(1).truncationMode(.tail)
         }
     }
     
 }
-
+//
 
 #Preview {
     GridView()
