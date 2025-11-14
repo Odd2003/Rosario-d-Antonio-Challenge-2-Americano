@@ -36,7 +36,9 @@ struct ListView: View {
                                 VStack(alignment: .leading) {
                                     Text(textName)
                                     Spacer()
-                                    Text("S01 | \(show.watchedEpisodes + 1)")
+                                    let tuple = findSeason(show: show)
+                                    
+                                    Text("S\(String(format: "%02d", tuple.0)) | E\(String(format: "%02d", tuple.1 + 1))")
                                 }
                                 
                                 Spacer()
@@ -49,6 +51,7 @@ struct ListView: View {
                                 .buttonStyle(.plain)
                                 
                             }
+                            
                         }
                         
                     }
@@ -60,10 +63,22 @@ struct ListView: View {
                         Text(curDate?.formatted(.dateTime.day().month().year()) ?? "").font(.title2).bold().foregroundStyle(.black)
                     }
                 }
-                
             }
         }
         
+    }
+    
+    func findSeason(show: Series) -> (Int, Int) {
+        var i = 1
+        var totalEps = 0
+        for episodesWatchedInSeason in show.episodes {
+            totalEps += episodesWatchedInSeason
+            if(show.watchedEpisodes < totalEps) {
+                return (i, show.watchedEpisodes - totalEps + episodesWatchedInSeason)
+            }
+            i += 1
+        }
+        return (0, 0)
     }
     
     func mapDays(num: Int) -> String {

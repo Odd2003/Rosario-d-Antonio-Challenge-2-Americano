@@ -25,7 +25,7 @@ struct GridView: View {
                             ShowDetailView(show: show)
                         } label: {
                             
-                            Card(name: show.name)
+                            Card(show: show)
                         }
                         
                         
@@ -42,16 +42,38 @@ struct GridView: View {
 
 struct Card: View {
     
-    var name: String
+    var show: Series
     
     var body: some View {
         VStack {
-            Image(name).resizable().scaledToFit()
+            Image(show.name).resizable().scaledToFit()
             
-            let textName: String = name.replacingOccurrences(of: "-", with: " ")
+            let textName: String = show.name.replacingOccurrences(of: "-", with: " ")
             
-            
-            Text(textName).foregroundStyle(.black).lineLimit(1).truncationMode(.tail)
+            ZStack {
+                GeometryReader { geo in
+                        let fullWidth = geo.size.width
+                    let totalEpisodes = show.episodes.reduce(0, +)
+                    let progress = CGFloat(show.watchedEpisodes) / CGFloat(totalEpisodes)
+
+                        // Background bar
+                        Rectangle()
+                        .fill(Color(red: 0.8, green: 0.8, blue: 0.8))
+                            .frame(height: 25)
+
+                        // Progress bar (uses %, not hard-coded width)
+                        Rectangle()
+                            .fill(.yellow)
+                            .frame(width: fullWidth * progress, height: 25)
+
+                        // Text
+                        Text(textName)
+                            .foregroundStyle(.black)
+                            .lineLimit(1)
+                            .truncationMode(.tail)
+                            .frame(width: fullWidth, height: 25).bold()
+                }.frame(height: 25)
+            }.padding(.top, -8)
         }
     }
     
