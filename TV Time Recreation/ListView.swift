@@ -28,7 +28,7 @@ struct ListView: View {
                     
                     ForEach(seriesList.series) { show in
                         
-                        if(show.dayOfRelease - 1 == i) {
+                        if(show.dayOfRelease - 1 == i && !show.isFinished()) {
                             HStack {
                                 Image(show.name).resizable().scaledToFit().frame(height: 100)
                                 let textName: String = show.name.replacingOccurrences(of: "-", with: " ")

@@ -14,21 +14,52 @@ struct GridView: View {
     
     var columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
+    var hasFinisedShows = sharedData.checkForFinshed()
+    
     var body: some View {
         NavigationStack {
             ScrollView {
                 LazyVGrid(columns: columns) {
                     
-                    ForEach(seriesList.series) { show in
-                        
-                        NavigationLink {
-                            ShowDetailView(show: show)
-                        } label: {
+                    Section {
+                        ForEach(seriesList.series) { show in
                             
-                            Card(show: show)
+                            if(!show.isFinished()) {
+                                NavigationLink {
+                                    ShowDetailView(show: show)
+                                } label: {
+                                    
+                                    Card(show: show, color: .yellow)
+                                }
+                            }
+                            
                         }
-                        
-                        
+                    } header: {
+                        ZStack {
+                            Capsule().foregroundStyle(Color(uiColor: .lightGray)).frame(width: 140, height: 30)
+                            Text("Watchlist").font(.system(size: 17, weight: .heavy))
+                        }
+                    }
+                    if(hasFinisedShows) {
+                        Section {
+                            
+                            ForEach(seriesList.series) { show in
+                                
+                                if(show.isFinished()) {
+                                    NavigationLink {
+                                        ShowDetailView(show: show)
+                                    } label: {
+                                        
+                                        Card(show: show, color: .purple)
+                                    }
+                                }
+                            }
+                        } header: {
+                            ZStack {
+                                Capsule().foregroundStyle(Color(uiColor: .lightGray)).frame(width: 140, height: 30)
+                                Text("Completed").font(.system(size: 17, weight: .heavy))
+                            }
+                        }
                     }
                 }
                 .padding(.horizontal, 10)
@@ -43,6 +74,7 @@ struct GridView: View {
 struct Card: View {
     
     var show: Series
+    var color: Color
     
     var body: some View {
         VStack {
@@ -63,7 +95,7 @@ struct Card: View {
 
                         // Progress bar (uses %, not hard-coded width)
                         Rectangle()
-                            .fill(.yellow)
+                            .fill(color)
                             .frame(width: fullWidth * progress, height: 25)
 
                         // Text
@@ -73,6 +105,8 @@ struct Card: View {
                             .truncationMode(.tail)
                             .frame(width: fullWidth, height: 25).bold()
                 }.frame(height: 25)
+                
+                
             }.padding(.top, -8)
         }
     }
@@ -81,5 +115,5 @@ struct Card: View {
 //
 
 #Preview {
-    GridView()
+    ContentView()
 }

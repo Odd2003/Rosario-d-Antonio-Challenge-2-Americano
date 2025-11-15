@@ -48,7 +48,11 @@ struct ShowDetailView: View {
                 
                 switch selection {
                 case .first:
-                    Text("")
+                    Text("Trama:").bold().padding(.top, 5).padding(.horizontal)
+                    ScrollView {
+                        
+                        Text(show.description)
+                    }.padding(.horizontal)
                 case .second:
                     SeasonsView(show: show)
                 }

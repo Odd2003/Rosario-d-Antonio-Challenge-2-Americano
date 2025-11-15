@@ -49,16 +49,19 @@ struct ListWidgetEntryView : View {
     let calendar = Calendar.current
    
     var body: some View {
-        let today = calendar.component(.weekday, from: Date())
+        let today = calendar.component(.weekday, from: entry.date)
         let adjustedToday = today == 1 ? 7 : today - 1 // convert Sunday=1 to 7
-
+        
         // Sort shows starting from today
-        let sortedShows = entry.series.series.sorted { show1, show2 in
+        var firstSortedShows = entry.series.series.sorted { show1, show2 in
             // Distance from today
             let distance1 = (show1.dayOfRelease - adjustedToday + 7) % 7
             let distance2 = (show2.dayOfRelease - adjustedToday + 7) % 7
             return distance1 < distance2
         }
+        
+        let sortedShows = firstSortedShows.filter{!$0.isFinished()}
+        
         switch family {
         case .systemMedium:
             ZStack {
@@ -230,5 +233,5 @@ struct ListWidget: Widget {
     ListWidget()
 } timeline: {
     SimpleEntry(date: .now, series: sharedData)
-    SimpleEntry(date: .now, series: sharedData)
+    SimpleEntry(date: Calendar.current.date(byAdding: .day, value: 1, to: Date())!, series: sharedData)
 }
