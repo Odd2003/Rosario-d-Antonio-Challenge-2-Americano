@@ -53,7 +53,7 @@ struct ListWidgetEntryView : View {
         let adjustedToday = today == 1 ? 7 : today - 1 // convert Sunday=1 to 7
         
         // Sort shows starting from today
-        var firstSortedShows = entry.series.series.sorted { show1, show2 in
+        let firstSortedShows = entry.series.series.sorted { show1, show2 in
             // Distance from today
             let distance1 = (show1.dayOfRelease - adjustedToday + 7) % 7
             let distance2 = (show2.dayOfRelease - adjustedToday + 7) % 7
