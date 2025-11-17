@@ -17,12 +17,18 @@ Build a clean, reusable SwiftUI codebase suitable for iteration
 
 # Project Structure
 TV Time Recreation/
- ├── TV_Time_RecreationApp.swift        // App entry point
- ├── Views/                             // App screens (Home, Watchlist, etc.)
- ├── Components/                        // Reusable SwiftUI components
- ├── Models/                            // Data models
- ├── Resources/                         // Images, colors, asset catalogs
- └── TV_Time_Recreation_Widget/         // WidgetKit extension
+ ├── TV_Time_RecreationApp.swift       
+ // App entry point
+ ├── Views/                            
+ // App screens (Home, Watchlist, etc.)
+ ├── Components/                        
+ // Reusable SwiftUI components
+ ├── Models/                            
+ // Data models
+ ├── Resources/                         
+ // Images, colors, asset catalogs
+ └── TV_Time_Recreation_Widget/         
+ // WidgetKit extension
 
 # Getting Started
 Requirements
