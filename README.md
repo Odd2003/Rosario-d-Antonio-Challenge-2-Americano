@@ -43,7 +43,11 @@ This is a learning project; network integration and persistent watchlist state a
 
 # Future Goals
 🌐 Pull shows and their info from the web (API integration)
+
 ➕ Add feature to add shows to watchlist
+
 ✅ Add features to add episodes watched
+
 🧭 Add “Movies”, “Discover” and “Profile” tabs
+
 These goals are prioritized to move the app from a static UI recreation to a full-featured, data-driven experience.
