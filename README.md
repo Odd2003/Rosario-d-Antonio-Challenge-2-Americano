@@ -2,23 +2,17 @@
 A SwiftUI recreation inspired by the TV Time app — built to sharpen SwiftUI skills and implement a functional home-screen widget using WidgetKit.
 
 # Overview
-This repo contains a learning project that re-creates core UI patterns of the TV Time app using SwiftUI and explores WidgetKit by shipping a home-screen widget. The app is intentionally modular to make it easy to learn from and iterate on.
+This repo contains a learning project that re-creates the core UI views of the TV Time app using SwiftUI and explores WidgetKit by shipping a home-screen widget.
 
 # ✨ Features
-Recreated TV Time–style UI components using SwiftUI
+Recreated TV Time "Shows" screen using SwiftUI
 
 Functional WidgetKit home-screen widget
 
-Modular component architecture for easy reuse and experimentation
-
-Clean folder structure and lightweight data models
-
 # 🎯 Project Goals
-Improve practical SwiftUI knowledge (layout, state management, view composition)
+Understand and implement a widget using WidgetKit
 
-Understand and implement WidgetKit timelines, entries, and snapshot behavior
-
-Build a clean, reusable SwiftUI codebase suitable for iteration
+Improve practical SwiftUI knowledge
 
 # Project Structure
 TV Time Recreation/
@@ -44,16 +38,12 @@ Implemented using WidgetKit + SwiftUI
 
 Demonstrates TimelineProvider and timeline entries
 
-Widget follows WidgetKit constraints (small/snapshot-friendly UI)
-
-Designed for quick snapshots and minimal work in the widget extension
+Widget follows WidgetKit constraints (medium and large family implementation)
 
 # Usage / UX
-Browse the recreated UI screens to view components and layout decisions.
+Browse the recreated UI screens to view shows and their details.
 
 The widget shows a compact snapshot of a show (or placeholder data) to demonstrate timeline rendering.
-
-This is a learning project; network integration and persistent watchlist state are planned (see Future Goals).
 
 # Future Goals
 🌐 Pull shows and their info from the web (API integration)
