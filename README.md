@@ -18,15 +18,10 @@ Build a clean, reusable SwiftUI codebase suitable for iteration
 # Project Structure
 TV Time Recreation/
  ├── TV_Time_RecreationApp.swift       
- 
  ├── Views/                            
- 
  ├── Components/                  
- 
  ├── Models/  
- 
  ├── Resources/                     
- 
  └── TV_Time_Recreation_Widget/     
 
 # Getting Started
