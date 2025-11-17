@@ -4,13 +4,13 @@ A SwiftUI recreation inspired by the TV Time app — built to sharpen SwiftUI sk
 # Overview
 This repo contains a learning project that re-creates core UI patterns of the TV Time app using SwiftUI and explores WidgetKit by shipping a home-screen widget. The app is intentionally modular to make it easy to learn from and iterate on.
 
-# Features
+# ✨ Features
 Recreated TV Time–style UI components using SwiftUI
 Functional WidgetKit home-screen widget
 Modular component architecture for easy reuse and experimentation
 Clean folder structure and lightweight data models
 
-# Project Goals
+# 🎯 Project Goals
 Improve practical SwiftUI knowledge (layout, state management, view composition)
 Understand and implement WidgetKit timelines, entries, and snapshot behavior
 Build a clean, reusable SwiftUI codebase suitable for iteration
