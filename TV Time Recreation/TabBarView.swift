@@ -22,6 +22,7 @@ struct TabBarView: View {
             Tab("Discover", systemImage: "magnifyingglass") {
                 Text("View not implemented")
             }
+            
             Tab("Profile", systemImage: "person.crop.circle") {
                 Text("View not implemented")
             }
